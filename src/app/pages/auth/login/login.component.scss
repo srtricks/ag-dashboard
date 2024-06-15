@@ -1,0 +1,146 @@
+@import "../../../../assets/scss/variables";
+.auth-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: calc(100vh - 40px);
+  flex-direction: column;
+  padding: 20px;
+
+  &:after {
+    content: "";
+    height: 10px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: $primaryColor;
+  }
+  .main-hdr {
+    margin-top: 62px;
+    margin-bottom: 45px;
+    text-align: center;
+  }
+  ::ng-deep {
+    label,
+    .frm-cont {
+      font-size: 10px;
+      font-weight: 300;
+      line-height: 15px;
+      letter-spacing: 0.1em;
+    }
+    label {
+      text-transform: uppercase;
+      color: #2c3a47 !important;
+    }
+    .mdc-text-field--filled .mdc-line-ripple::after,
+    .mdc-text-field--filled .mdc-line-ripple::before {
+      display: none !important;
+    }
+    .mat-mdc-text-field-wrapper {
+      height: 47px;
+      background: #cad3c82e;
+      border-radius: 5px;
+      padding-left: 34px;
+    }
+    .mat-mdc-form-field-infix {
+      min-height: 47px;
+      padding-top: 10px;
+    }
+    .mat-mdc-text-field-wrapper
+      .mat-mdc-form-field-flex
+      .mat-mdc-floating-label {
+      top: 25px;
+      &.mdc-floating-label--float-above {
+        top: 20px;
+      }
+    }
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .login-frm {
+    max-width: 435px;
+    width: 100%;
+    margin-inline: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .frm-grp {
+      width: 100%;
+      position: relative;
+
+      .inp-icon {
+        position: absolute;
+        left: -16px;
+        top: 12px;
+      }
+    }
+
+    a {
+      font-size: 10px;
+
+      line-height: 15px;
+      letter-spacing: 0.03em;
+      color: #2c3a47;
+    }
+    .submit-btn {
+      width: 100%;
+      height: 47px;
+      border-radius: 5px;
+      border: none;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 24px;
+      letter-spacing: 0.1em;
+      color: #fff;
+      background-color: $primaryColor;
+      margin-bottom: 20px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    .err-msg {
+      width: calc(100% - 34px);
+      height: 47px;
+      border-radius: 5px;
+      background: #f6647f2e;
+      display: flex;
+      align-items: center;
+      padding-inline: 17px;
+      margin-bottom: 18px;
+      margin-top: 10px;
+
+      span {
+        color: #d90202;
+        font-size: 11px;
+        font-weight: 300;
+        line-height: 16.5px;
+        letter-spacing: 0.1em;
+        display: inline-block;
+        margin-left: 12px;
+      }
+    }
+  }
+  footer {
+    ul {
+      display: flex;
+      justify-content: center;
+      li {
+        &:not(:last-child) {
+          margin-right: 20px;
+        }
+      }
+    }
+    span {
+      font-size: 12px;
+
+      line-height: 15px;
+      letter-spacing: 0.03em;
+    }
+  }
+}

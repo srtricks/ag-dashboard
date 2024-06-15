@@ -1,0 +1,290 @@
+@import "../../../../../assets/scss/variables";
+.main-wrapper {
+  display: flex;
+  background: #f2f3f2;
+  height: 100vh;
+  header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $primaryColor;
+    width: 100%;
+    box-shadow: 0px 2px 4px 0px #00000040;
+    height: 80px;
+    .logo {
+      width: 145px;
+      text-align: center;
+    }
+    .stepper-wrap {
+      width: calc(100vw - 350px);
+    }
+    ::ng-deep {
+      .mat-stepper-vertical,
+      .mat-stepper-horizontal {
+        background: transparent;
+      }
+      .mat-horizontal-content-container {
+        padding: 0;
+      }
+      .mat-stepper-label-position-bottom .mat-horizontal-stepper-header {
+        padding: 11px;
+      }
+      .mat-stepper-label-position-bottom .mat-horizontal-stepper-header::before,
+      .mat-stepper-label-position-bottom .mat-horizontal-stepper-header::after,
+      .mat-stepper-label-position-bottom .mat-stepper-horizontal-line {
+        top: 24px;
+        border-color: #cad3c8;
+      }
+      .mat-stepper-label-position-bottom
+        .mat-horizontal-stepper-header
+        .mat-step-label {
+        padding-top: 5px;
+      }
+      .mat-step-text-label {
+        color: #fff;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 18px;
+      }
+      .mat-step-icon {
+        background-color: transparent;
+        border: 1px solid #cad3c8;
+      }
+      .mat-step-icon-selected {
+        color: $primaryColor;
+        background-color: #fff;
+        border-color: #fff;
+      }
+    }
+    .hdr-right {
+      display: flex;
+      min-width: max-content;
+      margin-right: 17px;
+      .user-info {
+        display: flex;
+        flex-direction: column;
+        margin-right: 5px;
+        strong {
+          color: #fff;
+          font-size: 14px;
+          line-height: 21px;
+        }
+        span {
+          color: #fff;
+          font-size: 12px;
+          line-height: 18px;
+        }
+        em {
+          color: #fff;
+          font-size: 12px;
+          line-height: 18px;
+          font-style: normal;
+        }
+      }
+    }
+  }
+  aside {
+    width: 145px;
+    background-color: $primaryColor;
+    padding-top: 90px;
+    height: 100vh;
+    ::ng-deep {
+      .mdc-list-item {
+        padding-inline: 10px;
+      }
+      .mdc-list-item__primary-text {
+        color: #fff;
+        font-family: Poppins;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 18px;
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    .menu-button {
+      transition: 300ms ease-in-out;
+      transform: rotate(0deg);
+    }
+    .menu-button.rotated {
+      transform: rotate(180deg);
+    }
+    .submenu {
+      overflow-y: hidden;
+      transition: transform 300ms ease;
+      transform: scaleY(0);
+      transform-origin: top;
+      background-color: #da773f;
+      height: 0;
+      ::ng-deep {
+        .mdc-list-item {
+          padding-left: 15px;
+        }
+        .mdc-list-item__primary-text {
+          font-size: 11px;
+          font-weight: 400;
+          line-height: 16.5px;
+        }
+      }
+      &.expanded {
+        transform: scaleY(1);
+        height: auto;
+      }
+    }
+  }
+  main {
+    width: calc(100vw - 145px);
+    padding-top: 80px;
+  }
+  .templates-wrap {
+    padding: 22px 25px;
+    height: calc(100vh - 124px);
+
+    .templates-inr {
+      box-shadow: 0px 2px 4px 0px #00000040;
+      background-color: #fff;
+      height: 100%;
+      overflow-y: auto;
+    }
+  }
+  .templates-hdr {
+    border-bottom: 1px solid #eef1ee;
+    padding: 11px 17px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    h2 {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 21px;
+      margin: 0;
+    }
+  }
+  .search-btn,
+  .create-btn {
+    height: 30px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 18px;
+    letter-spacing: 0.04em;
+    color: #fff;
+    background-color: $primaryColor;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-inline: 10px;
+    svg {
+      margin-right: 5px;
+    }
+  }
+  .search-btn {
+    margin-top: 18px;
+  }
+  .table-filter {
+    padding-inline: 17px;
+  }
+  .table-filter {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .frm-grp {
+    margin-right: 14px;
+    strong {
+      display: block;
+      font-size: 11px;
+      font-weight: 500;
+      line-height: 16.5px;
+      letter-spacing: 0.1em;
+      color: #6c5243;
+      margin-bottom: 5px;
+    }
+  }
+
+  ::ng-deep {
+    label,
+    .frm-cont {
+      font-size: 10px;
+      font-weight: 300;
+      line-height: 15px;
+      letter-spacing: 0.1em;
+    }
+    label {
+      text-transform: uppercase;
+      color: #2c3a47 !important;
+    }
+    .mdc-text-field--filled .mdc-line-ripple::after,
+    .mdc-text-field--filled .mdc-line-ripple::before {
+      display: none !important;
+    }
+    .mat-mdc-text-field-wrapper {
+      height: 26px;
+      background: #cad3c82e;
+      border-radius: 2px;
+      border: 1px solid #cad3c8;
+    }
+    .mat-mdc-form-field-infix {
+      min-height: 26px;
+      padding: 0px;
+    }
+    .mat-mdc-text-field-wrapper
+      .mat-mdc-form-field-flex
+      .mat-mdc-floating-label {
+      top: 15px;
+      &.mdc-floating-label--float-above {
+        top: 10px;
+      }
+    }
+    .mat-mdc-icon-button.mat-mdc-button-base,
+    .mat-mdc-form-field-icon-prefix,
+    .mat-mdc-form-field-icon-suffix {
+      width: 26px;
+      height: 26px;
+      padding: 0;
+    }
+    .mat-datepicker-toggle {
+      color: #43586c;
+      .material-icons {
+        font-size: 16px;
+        line-height: 26px;
+      }
+    }
+  }
+  .table-wrap {
+    margin-inline: 17px;
+    border: 1px solid #cad3c8;
+    margin-bottom: 17px;
+    table {
+      border-bottom: 1px solid #cad3c8;
+    }
+    .action-btns {
+      display: flex;
+      align-items: center;
+      a {
+        cursor: pointer;
+        margin-right: 20px;
+      }
+    }
+    ::ng-deep {
+      .mat-mdc-paginator-page-size {
+        display: none;
+      }
+      thead {
+        background: #e8edf1;
+      }
+      th,
+      td {
+        &:not(:last-child) {
+          border-right: 1px solid #cad3c8;
+        }
+      }
+    }
+  }
+}
