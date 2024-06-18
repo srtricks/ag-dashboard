@@ -309,6 +309,10 @@
         line-height: 24px;
       }
     }
+    .mat-mdc-icon-button svg,
+    .mat-mdc-icon-button img {
+      max-width: 12px;
+    }
   }
   .table-wrap {
     margin-inline: 17px;
