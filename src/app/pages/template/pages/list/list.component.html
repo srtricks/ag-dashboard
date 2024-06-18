@@ -68,7 +68,7 @@
                     *ngIf="isExpanded || isShowing">expand_more</mat-icon>
             </mat-list-item>
             <div class="submenu" [ngClass]="{'expanded' : showSubmenu}" *ngIf="isShowing || isExpanded">
-                <a mat-list-item href="">Templates</a>
+                <a mat-list-item href="" class="active">Templates</a>
             </div>
             <mat-list-item (click)="showSubSubMenu = !showSubSubMenu" class="parent">
                 <span class="full-width" *ngIf="isExpanded || isShowing">Document Prep</span>
@@ -106,7 +106,7 @@
                     <div class="frm-grp">
                         <strong>Start Date</strong>
                         <mat-form-field class="example-full-width">
-                            <input matInput [matDatepicker]="picker">
+                            <input matInput [matDatepicker]="picker" class="frm-cont">
                             <mat-datepicker-toggle matIconSuffix [for]="picker">
                                 <mat-icon matDatepickerToggleIcon>calendar_month</mat-icon>
                             </mat-datepicker-toggle>
@@ -116,7 +116,7 @@
                     <div class="frm-grp">
                         <strong>End Date</strong>
                         <mat-form-field class="example-full-width">
-                            <input matInput [matDatepicker]="picker2">
+                            <input matInput [matDatepicker]="picker2" class="frm-cont">
                             <mat-datepicker-toggle matIconSuffix [for]="picker2">
                                 <mat-icon matDatepickerToggleIcon>calendar_month</mat-icon>
                             </mat-datepicker-toggle>
@@ -125,10 +125,10 @@
                     </div>
                     <div class="frm-grp">
                         <strong>Region</strong>
-                        <mat-form-field>
-                            <mat-select>
-                                @for (food of foods; track food) {
-                                <mat-option [value]="food.value">{{food.viewValue}}</mat-option>
+                        <mat-form-field class="custom-select">
+                            <mat-select placeholder="Select">
+                                @for (region of regions; track region) {
+                                <mat-option [value]="region.value">{{region.viewValue}}</mat-option>
                                 }
                             </mat-select>
                         </mat-form-field>
@@ -221,8 +221,7 @@
                         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
                     </table>
 
-                    <mat-paginator [pageSizeOptions]="[5]" showFirstLastButtons
-                        aria-label="Select page of periodic elements">
+                    <mat-paginator [pageSizeOptions]="[5]" aria-label="Select page of periodic elements">
                     </mat-paginator>
                 </div>
             </div>

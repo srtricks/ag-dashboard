@@ -45,14 +45,14 @@ export class ListComponent implements AfterViewInit {
     this.dataSource.paginator = this.paginator;
   }
 
-  foods: Food[] = [
+  regions: Region[] = [
     { value: '1', viewValue: '1' },
     { value: '2', viewValue: '2' },
     { value: '3', viewValue: '3' },
   ];
 }
 
-interface Food {
+interface Region {
   value: string;
   viewValue: string;
 }

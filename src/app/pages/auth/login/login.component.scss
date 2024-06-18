@@ -24,33 +24,39 @@
   ::ng-deep {
     label,
     .frm-cont {
+      font-family: "Poppins", sans-serif;
       font-size: 10px;
       font-weight: 300;
       line-height: 15px;
       letter-spacing: 0.1em;
+      color: #333c31 !important;
     }
     label {
       text-transform: uppercase;
-      color: #2c3a47 !important;
     }
+    .mat-mdc-form-field-focus-overlay,
+    .mdc-floating-label--required:not(
+        .mdc-floating-label--hide-required-marker
+      )::after,
     .mdc-text-field--filled .mdc-line-ripple::after,
     .mdc-text-field--filled .mdc-line-ripple::before {
       display: none !important;
     }
     .mat-mdc-text-field-wrapper {
       height: 47px;
-      background: #cad3c82e;
+      background: #cad3c82e !important;
       border-radius: 5px;
       padding-left: 34px;
+      border: 1px solid #cad3c8;
     }
     .mat-mdc-form-field-infix {
-      min-height: 47px;
+      min-height: 45px;
       padding-top: 10px;
     }
     .mat-mdc-text-field-wrapper
       .mat-mdc-form-field-flex
       .mat-mdc-floating-label {
-      top: 25px;
+      top: 24px;
       &.mdc-floating-label--float-above {
         top: 20px;
       }
@@ -60,6 +66,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    margin-top: 10vh;
   }
 
   .login-frm {
@@ -84,10 +91,12 @@
 
     a {
       font-size: 10px;
-
       line-height: 15px;
       letter-spacing: 0.03em;
       color: #2c3a47;
+      &:hover {
+        color: $primaryColor;
+      }
     }
     .submit-btn {
       width: 100%;
@@ -101,8 +110,11 @@
       color: #fff;
       background-color: $primaryColor;
       margin-bottom: 20px;
-      margin-top: 10px;
+      margin-top: 13px;
       cursor: pointer;
+      &:hover {
+        background-color: #a74610;
+      }
     }
     .err-msg {
       width: calc(100% - 34px);
@@ -113,7 +125,7 @@
       align-items: center;
       padding-inline: 17px;
       margin-bottom: 18px;
-      margin-top: 10px;
+      margin-top: 13px;
 
       span {
         color: #d90202;
@@ -131,14 +143,17 @@
       display: flex;
       justify-content: center;
       li {
+        a:hover svg path:first-child {
+          fill: $primaryColor;
+        }
         &:not(:last-child) {
           margin-right: 20px;
         }
       }
     }
     span {
-      font-size: 12px;
-
+      font-size: 10px;
+      color: #333c31;
       line-height: 15px;
       letter-spacing: 0.03em;
     }

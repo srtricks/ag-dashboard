@@ -19,9 +19,14 @@
       text-align: center;
     }
     .stepper-wrap {
-      width: calc(100vw - 350px);
+      width: calc(100vw - 450px);
     }
     ::ng-deep {
+      .mat-step-header .mat-step-header-ripple {
+        display: none;
+      }
+      .mat-step-header:hover:not([aria-disabled]),
+      .mat-step-header:hover[aria-disabled="false"],
       .mat-stepper-vertical,
       .mat-stepper-horizontal {
         background: transparent;
@@ -31,6 +36,18 @@
       }
       .mat-stepper-label-position-bottom .mat-horizontal-stepper-header {
         padding: 11px;
+      }
+      .mat-stepper-label-position-bottom
+        .mat-horizontal-stepper-header:not(:first-child)::before,
+      [dir="rtl"]
+        .mat-stepper-label-position-bottom
+        .mat-horizontal-stepper-header:not(:last-child)::before,
+      .mat-stepper-label-position-bottom
+        .mat-horizontal-stepper-header:not(:last-child)::after,
+      [dir="rtl"]
+        .mat-stepper-label-position-bottom
+        .mat-horizontal-stepper-header:not(:first-child)::after {
+        width: calc(50% - 12px);
       }
       .mat-stepper-label-position-bottom .mat-horizontal-stepper-header::before,
       .mat-stepper-label-position-bottom .mat-horizontal-stepper-header::after,
@@ -68,6 +85,7 @@
         flex-direction: column;
         margin-right: 5px;
         strong {
+          font-weight: 400;
           color: #fff;
           font-size: 14px;
           line-height: 21px;
@@ -79,7 +97,7 @@
         }
         em {
           color: #fff;
-          font-size: 12px;
+          font-size: 10px;
           line-height: 18px;
           font-style: normal;
         }
@@ -90,10 +108,18 @@
     width: 145px;
     background-color: $primaryColor;
     padding-top: 90px;
-    height: 100vh;
+    height: calc(100vh - 90px);
     ::ng-deep {
       .mdc-list-item {
         padding-inline: 10px;
+        &.parent {
+          &:not(:first-of-type) {
+            margin-top: 10px;
+          }
+        }
+      }
+      .mdc-list-item.mdc-list-item--with-one-line {
+        height: 35px;
       }
       .mdc-list-item__primary-text {
         color: #fff;
@@ -123,6 +149,10 @@
       ::ng-deep {
         .mdc-list-item {
           padding-left: 15px;
+          border-radius: 0;
+          &.active {
+            background-color: #f5a172;
+          }
         }
         .mdc-list-item__primary-text {
           font-size: 11px;
@@ -142,7 +172,7 @@
   }
   .templates-wrap {
     padding: 22px 25px;
-    height: calc(100vh - 124px);
+    height: calc(100% - 44px);
 
     .templates-inr {
       box-shadow: 0px 2px 4px 0px #00000040;
@@ -209,35 +239,58 @@
   }
 
   ::ng-deep {
+    .mat-mdc-select-arrow {
+      background-image: url(../../../../../assets/images/down-arrow.svg);
+
+      svg {
+        display: none;
+      }
+    }
+    .mat-mdc-select-placeholder,
+    .mat-mdc-select-value-text,
     label,
     .frm-cont {
-      font-size: 10px;
+      font-family: "Poppins", sans-serif;
+      font-size: 11px;
       font-weight: 300;
-      line-height: 15px;
+      line-height: 16.5px;
       letter-spacing: 0.1em;
+      color: #000;
+      position: relative;
+      top: -2px;
+    }
+    .mat-mdc-select-placeholder {
+      color: #cad3c8;
     }
     label {
       text-transform: uppercase;
       color: #2c3a47 !important;
     }
+    .mat-mdc-form-field-focus-overlay,
     .mdc-text-field--filled .mdc-line-ripple::after,
     .mdc-text-field--filled .mdc-line-ripple::before {
       display: none !important;
     }
     .mat-mdc-text-field-wrapper {
       height: 26px;
-      background: #cad3c82e;
+      background: #fff;
       border-radius: 2px;
       border: 1px solid #cad3c8;
+      padding-left: 10px;
+    }
+    .custom-select {
+      .mat-mdc-text-field-wrapper {
+        padding-right: 10px;
+      }
     }
     .mat-mdc-form-field-infix {
-      min-height: 26px;
+      min-height: 24px;
       padding: 0px;
     }
     .mat-mdc-text-field-wrapper
       .mat-mdc-form-field-flex
       .mat-mdc-floating-label {
-      top: 15px;
+      top: 14px;
       &.mdc-floating-label--float-above {
         top: 10px;
       }
@@ -253,7 +306,7 @@
       color: #43586c;
       .material-icons {
         font-size: 16px;
-        line-height: 26px;
+        line-height: 24px;
       }
     }
   }
@@ -261,6 +314,10 @@
     margin-inline: 17px;
     border: 1px solid #cad3c8;
     margin-bottom: 17px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(100vh - 280px);
     table {
       border-bottom: 1px solid #cad3c8;
     }
@@ -276,14 +333,59 @@
       .mat-mdc-paginator-page-size {
         display: none;
       }
+      .mat-mdc-paginator {
+        border-top: 1px solid #cad3c8;
+      }
+      .mat-mdc-paginator-container {
+        min-height: 30px;
+      }
+      .mat-mdc-paginator-range-label {
+        margin-right: 12px;
+      }
       thead {
         background: #e8edf1;
       }
+      .mat-mdc-row,
+      .mat-mdc-header-row {
+        height: 38px;
+      }
       th,
       td {
+        font-family: "Poppins", sans-serif;
+        font-size: 11px;
+        line-height: 16.5px;
+        padding-inline: 19px;
         &:not(:last-child) {
           border-right: 1px solid #cad3c8;
         }
+        &:first-child {
+          width: 10%;
+        }
+        &:nth-child(2) {
+          width: 15%;
+        }
+        &:nth-child(3) {
+          width: 12%;
+        }
+        &:nth-child(4) {
+          width: 15%;
+        }
+        &:nth-child(5) {
+          width: 12%;
+        }
+        // &:nth-child(6) {
+        //   width: 12%;
+        // }
+      }
+
+      th {
+        color: #43586c;
+        font-weight: 500;
+      }
+      td {
+        font-weight: 300;
+        letter-spacing: 0.1em;
+        color: #000;
       }
     }
   }

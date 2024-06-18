@@ -43,7 +43,7 @@
                 </i>
                 <input type="text" matInput [formControl]="usernameFormControl" class="frm-cont">
                 @if (usernameFormControl.hasError('required')) {
-                <mat-error>Username is <strong>required</strong>.</mat-error>
+                <mat-error>Username is required.</mat-error>
                 }
             </mat-form-field>
             <mat-form-field class="frm-grp">
@@ -64,7 +64,7 @@
                 </i>
                 <input type="password" matInput [formControl]="passwordFormControl" class="frm-cont">
                 @if (passwordFormControl.hasError('required')) {
-                <mat-error>Password is <strong>required</strong>.</mat-error>
+                <mat-error>Password is required.</mat-error>
                 }
             </mat-form-field>
             <div class="err-msg" *ngIf="false">
